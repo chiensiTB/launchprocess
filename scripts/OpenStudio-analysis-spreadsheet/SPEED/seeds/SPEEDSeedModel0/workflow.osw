@@ -1,0 +1,15 @@
+{
+   "created_at" : "20170505T081840Z",
+   "seed_file" : "../SPEEDSeedModel0.osm",
+   "steps" : [
+      {
+         "arguments" : {},
+         "description" : "Will push a user-customized report to MongoDB",
+         "measure_dir_name" : "push_custom_results_to_mongo_db",
+         "modeler_description" : "I think that you will like this one.",
+         "name" : "PushCustomResultsToMongoDB"
+      }
+   ],
+   "updated_at" : "20170505T155650Z",
+   "weather_file" : "USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+}

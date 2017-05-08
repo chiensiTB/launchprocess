@@ -1,0 +1,61 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_ext_wall_to_ground_boundary_condition_by_story</name>
+  <uid>be9023ea-fefe-4074-ac03-718ccfb6d25f</uid>
+  <version_id>ff66a77c-cdac-4e79-b640-efc8519ae30c</version_id>
+  <version_modified>20161107T222434Z</version_modified>
+  <xml_checksum>E8A47F56</xml_checksum>
+  <class_name>SetExtWallToGroundBoundaryConditionByStory</class_name>
+  <display_name>SetExtWallToGroundBoundaryConditionByStory</display_name>
+  <description>Use this to setup one of your building stories as a basement.</description>
+  <modeler_description>This measure will find all exterior walls for spaces on the selected building story and change their outside boundary condition to ground. Make sure surface matching has been done first, or walls intended to be interior walls will end up with a ground boundary condition.</modeler_description>
+  <arguments>
+    <argument>
+      <name>storyBasement</name>
+      <display_name>Choose a Story to Change Wall Boundary Conditions For.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Function</name>
+      <value>Measure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Requires EnergyPlus Results</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.0.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>A673D499</checksum>
+    </file>
+  </files>
+</measure>

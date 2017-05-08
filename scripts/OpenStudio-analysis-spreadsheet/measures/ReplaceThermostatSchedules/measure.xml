@@ -1,0 +1,104 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>replace_thermostat_schedules</name>
+  <uid>67931e1a-bff1-4da2-97c9-577f0daecc40</uid>
+  <version_id>16a31c9c-a52a-4cac-8f5b-4706f9150c2c</version_id>
+  <version_modified>20161107T222425Z</version_modified>
+  <xml_checksum>E8A47F56</xml_checksum>
+  <class_name>ReplaceThermostatSchedules</class_name>
+  <display_name>Replace Thermostat Schedules</display_name>
+  <description>Replace zone thermostat schedules with other schedules in the same file.  If a zone does not have a thermostat this measure will not add one.</description>
+  <modeler_description>Replace zone thermostat schedules with other schedules in the same file. If a zone does not have a thermostat this measure will not add one.</modeler_description>
+  <arguments>
+    <argument>
+      <name>zones</name>
+      <display_name>Choose Thermal Zones to change thermostat schedules on.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>{8ff91601-c0ec-4224-a282-ce414a8639cb}</default_value>
+      <choices>
+        <choice>
+          <value>{8ff91601-c0ec-4224-a282-ce414a8639cb}</value>
+          <display_name>*All Thermal Zones*</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>cooling_sch</name>
+      <display_name>Choose Cooling Schedule.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>{00000000-0000-0000-0000-000000000000}</default_value>
+      <choices>
+        <choice>
+          <value>{00000000-0000-0000-0000-000000000000}</value>
+          <display_name>*No Change*</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>heating_sch</name>
+      <display_name>Choose Heating Schedule.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>{00000000-0000-0000-0000-000000000000}</default_value>
+      <choices>
+        <choice>
+          <value>{00000000-0000-0000-0000-000000000000}</value>
+          <display_name>*No Change*</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>material_cost</name>
+      <display_name>Material and Installation Costs per Thermal Zone ($/thermal zone).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.HVAC Controls</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Function</name>
+      <value>Measure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Requires EnergyPlus Results</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.2.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>A863E708</checksum>
+    </file>
+  </files>
+</measure>

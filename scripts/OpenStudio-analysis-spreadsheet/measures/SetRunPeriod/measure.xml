@@ -1,0 +1,72 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_run_period</name>
+  <uid>63d43c68-ed11-4c60-a5c5-cae72f7ba4ff</uid>
+  <version_id>cc2ef2f3-8db9-4e93-a774-7231768604e3</version_id>
+  <version_modified>20161107T222440Z</version_modified>
+  <xml_checksum>BCB7218E</xml_checksum>
+  <class_name>SetRunPeriod</class_name>
+  <display_name>SetRunPeriod</display_name>
+  <description>This will allow you to change the starting and ending day and month of the Run Period object.</description>
+  <modeler_description>This controls the length of the simulation period for EnergyPlus.</modeler_description>
+  <arguments>
+    <argument>
+      <name>begin_month</name>
+      <display_name>Begin Month</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>begin_day</name>
+      <display_name>Begin Day</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>end_month</name>
+      <display_name>End Month</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>end_day</name>
+      <display_name>End Day</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Whole Building Schedules</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.4.0</identifier>
+        <min_compatible>1.4.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>4CBCED09</checksum>
+    </file>
+  </files>
+</measure>

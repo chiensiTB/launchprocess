@@ -1,0 +1,786 @@
+{
+  "analysis": {
+    "display_name": "PW Arguments Test 2 - LHS Sampling",
+    "name": "pw_arguments_test_2_lhs_sampling",
+    "output_variables": [
+      {
+        "units": "MJ/m2",
+        "objective_function": true,
+        "objective_function_index": 0,
+        "objective_function_target": null,
+        "objective_function_group": 1,
+        "scaling_factor": null,
+        "display_name": "Total Source Energy Intensity",
+        "display_name_short": "Source EUI",
+        "metadata_id": "total_source_energy_intensity",
+        "name": "standard_report_legacy.total_source_energy",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Total Natural Gas Intensity",
+        "display_name_short": "NG EUI",
+        "metadata_id": "total_natural_gas_intensity",
+        "name": "standard_report_legacy.total_natural_gas",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Total Electricity Intensity",
+        "display_name_short": "Elec EUI",
+        "metadata_id": "total_electricity_intensity",
+        "name": "standard_report_legacy.total_electricity",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "hrs",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Unmet Cooling Hours",
+        "display_name_short": "Unmet Cooling Hours",
+        "metadata_id": null,
+        "name": "standard_reports.time_setpoint_not_met_during_occupied_cooling",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "hrs",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Unmet Heating Hours",
+        "display_name_short": "Unmet Heating Hours",
+        "metadata_id": null,
+        "name": "standard_reports.time_setpoint_not_met_during_occupied_heating",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "hrs",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Total Unmet Hours",
+        "display_name_short": "Total Unmet Hours",
+        "metadata_id": null,
+        "name": "standard_reports.time_setpoint_not_met_during_occupied_hours",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Building Area",
+        "display_name_short": "Building Area",
+        "metadata_id": null,
+        "name": "standard_reports.total_building_area",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Natural Gas Heating Intensity",
+        "display_name_short": "Natural Gas Heating Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.heating_natural_gas",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Cooling Electricity Intensity",
+        "display_name_short": "Cooling Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.cooling_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Interior Lighting Electricity Intensity",
+        "display_name_short": "Interior Lighting Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.interior_lighting_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Exterior Lighting Electricity Intensity",
+        "display_name_short": "Exterior Lighting Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.exterior_lighting_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Equipment Electricity Intensity",
+        "display_name_short": "Equipment Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.interior_equipment_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Equipment Natural Gas Intensity",
+        "display_name_short": "Equipment Natural Gas Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.interior_equipment_natural_gas",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Experior Equipment Electricity Intensity",
+        "display_name_short": "Experior Equipment Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.exterior_equipment_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Fans Electricity Intensity",
+        "display_name_short": "Fans Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.fans_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Pumps Electricity Intensity",
+        "display_name_short": "Pumps Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.pumps_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Heat Rejection Electricity Intensity",
+        "display_name_short": "Heat Rejection Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.heat_rejection_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Humidification Electricity Intensity",
+        "display_name_short": "Humidification Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.humidification_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Water Systems Electricity Intensity",
+        "display_name_short": "Water Systems Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.water_systems_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Water Systems Natural Gas Intensity",
+        "display_name_short": "Water Systems Natural Gas Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.water_systems_natural_gas",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "MJ/m2",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Refrigeration Electricity Intensity",
+        "display_name_short": "Refrigeration Electricity Intensity",
+        "metadata_id": null,
+        "name": "standard_report_legacy.refrigeration_electricity",
+        "visualize": false,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "units": "$",
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "Total Life Cycle Cost",
+        "display_name_short": "Total Life Cycle Cost",
+        "metadata_id": null,
+        "name": "standard_report.total_life_cycle_cost",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      }
+    ],
+    "problem": {
+      "analysis_type": "lhs",
+      "algorithm": {
+        "sample_method": "all_variables",
+        "number_of_samples": 5,
+        "objective_functions": [
+          "standard_report_legacy.total_source_energy"
+        ]
+      },
+      "workflow": [
+        {
+          "name": "reduce_lighting_loads_by_percentage",
+          "display_name": "Reduce Lighting Loads by Percentage",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "ReduceLightingLoadsByPercentage",
+          "measure_definition_directory": "./measures/ReduceLightingLoadsByPercentage",
+          "measure_definition_directory_local": "/Users/chienharriman/OpenStudio-analysis-spreadsheet/measures/ReduceLightingLoadsByPercentage",
+          "measure_definition_display_name": "Reduce Lighting Loads by Percentage",
+          "measure_definition_name": "reduce_lighting_loads_by_percentage",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "f7205764-4edb-4b7d-811f-2c5e510a5e8c",
+          "measure_definition_version_uuid": "08ab7e8c-9a0e-4c34-98c7-5baafc76913b",
+          "arguments": [
+            {
+              "display_name": "Skip Entire Measure",
+              "display_name_short": "Skip",
+              "name": "__SKIP__",
+              "value_type": "boolean",
+              "default_value": false,
+              "value": false
+            },
+            {
+              "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+              "display_name_short": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+              "name": "space_type",
+              "value_type": "string",
+              "default_value": "*Entire Building*",
+              "value": "*Entire Building*"
+            },
+            {
+              "display_name": "Increase in Material and Installation Cost for Lighting per Floor Area (%).",
+              "display_name_short": "Increase in Material and Installation Cost for Lighting per Floor Area (%).",
+              "name": "material_and_installation_cost",
+              "value_type": "double",
+              "default_value": 150.0,
+              "value": 150.0
+            },
+            {
+              "display_name": "Increase in Demolition Costs for Lighting per Floor Area (%).",
+              "display_name_short": "Increase in Demolition Costs for Lighting per Floor Area (%).",
+              "name": "demolition_cost",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "Years Until Costs Start (whole years).",
+              "display_name_short": "Years Until Costs Start (whole years).",
+              "name": "years_until_costs_start",
+              "value_type": "integer",
+              "default_value": 0,
+              "value": 0
+            },
+            {
+              "display_name": "Demolition Costs Occur During Initial Construction?",
+              "display_name_short": "Demolition Costs Occur During Initial Construction?",
+              "name": "demo_cost_initial_const",
+              "value_type": "bool",
+              "default_value": false,
+              "value": false
+            },
+            {
+              "display_name": "Expected Life (whole years).",
+              "display_name_short": "Expected Life (whole years).",
+              "name": "expected_life",
+              "value_type": "integer",
+              "default_value": 15,
+              "value": 15
+            },
+            {
+              "display_name": "Increase O & M Costs for Lighting per Floor Area (%).",
+              "display_name_short": "Increase O & M Costs for Lighting per Floor Area (%).",
+              "name": "om_cost",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "O & M Frequency (whole years).",
+              "display_name_short": "O & M Frequency (whole years).",
+              "name": "om_frequency",
+              "value_type": "integer",
+              "default_value": 1,
+              "value": 1
+            }
+          ],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "LPD Reduction",
+                "display_name_short": "LPD Reduction",
+                "name": "lighting_power_reduction_percent",
+                "value_type": "double",
+                "default_value": 0.0,
+                "value": 0.0
+              },
+              "display_name": "LPD Reduction",
+              "display_name_short": "LPD Reduction",
+              "variable_type": "variable",
+              "units": null,
+              "minimum": 0.0,
+              "maximum": 70.0,
+              "relation_to_output": null,
+              "static_value": 0.0,
+              "uuid": "4055c683-b506-4b85-876f-0402951b789e",
+              "version_uuid": "cd1bae23-c52c-46b8-8ae3-b968eb59d86a",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "triangle",
+                "attributes": [
+                  {
+                    "name": "lower_bounds",
+                    "value": 0.0
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": 70.0
+                  },
+                  {
+                    "name": "modes",
+                    "value": 20.0
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": 11.66666667
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 0
+        },
+        {
+          "name": "set_r_value_of_insulation_for_exterior_walls_to_a_specific_value",
+          "display_name": "Set R-value of Insulation for Exterior Walls to a Specific Value",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "IncreaseInsulationRValueForExteriorWalls",
+          "measure_definition_directory": "./measures/IncreaseInsulationRValueForExteriorWalls",
+          "measure_definition_directory_local": "/Users/chienharriman/OpenStudio-analysis-spreadsheet/measures/IncreaseInsulationRValueForExteriorWalls",
+          "measure_definition_display_name": "Set R-value of Insulation for Exterior Walls to a Specific Value",
+          "measure_definition_name": "set_r_value_of_insulation_for_exterior_walls_to_a_specific_value",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "3fabaea5-6b34-4bc7-94b2-81332bd63477",
+          "measure_definition_version_uuid": "20675ac6-d53e-422c-9180-093ff283f70d",
+          "arguments": [
+            {
+              "display_name": "Skip Entire Measure",
+              "display_name_short": "Skip",
+              "name": "__SKIP__",
+              "value_type": "boolean",
+              "default_value": false,
+              "value": false
+            },
+            {
+              "display_name": "Increase in Material and Installation Costs for Construction per Area Used ($/ft^2).",
+              "display_name_short": "Increase in Material and Installation Costs for Construction per Area Used ($/ft^2).",
+              "name": "material_cost_increase_ip",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "One Time Retrofit Cost to Add Insulation to Construction ($/ft^2).",
+              "display_name_short": "One Time Retrofit Cost to Add Insulation to Construction ($/ft^2).",
+              "name": "one_time_retrofit_cost_ip",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "Year to Incur One Time Retrofit Cost (whole years).",
+              "display_name_short": "Year to Incur One Time Retrofit Cost (whole years).",
+              "name": "years_until_retrofit_cost",
+              "value_type": "integer",
+              "default_value": 0,
+              "value": 0
+            }
+          ],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "Wall R-Value",
+                "display_name_short": "Wall R-Value",
+                "name": "r_value",
+                "value_type": "double",
+                "default_value": 13.0,
+                "value": 13.0
+              },
+              "display_name": "Wall R-Value",
+              "display_name_short": "Wall R-Value",
+              "variable_type": "variable",
+              "units": null,
+              "minimum": 0.0,
+              "maximum": 50.0,
+              "relation_to_output": null,
+              "static_value": 13.0,
+              "uuid": "664dbbfb-1aa7-442e-aa8c-6ca493b91eff",
+              "version_uuid": "44a058f8-63c2-4607-b076-22c9510366c9",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "normal",
+                "attributes": [
+                  {
+                    "name": "lower_bounds",
+                    "value": 0.0
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": 50.0
+                  },
+                  {
+                    "name": "modes",
+                    "value": 25.0
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": 8.333333333
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 1
+        },
+        {
+          "name": "set_r_value_of_insulation_for_roofs_to_a_specific_value",
+          "display_name": "Set R-value of Insulation for Roofs to a Specific Value",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "IncreaseInsulationRValueForRoofs",
+          "measure_definition_directory": "./measures/IncreaseInsulationRValueForRoofs",
+          "measure_definition_directory_local": "/Users/chienharriman/OpenStudio-analysis-spreadsheet/measures/IncreaseInsulationRValueForRoofs",
+          "measure_definition_display_name": "Set R-value of Insulation for Roofs to a Specific Value",
+          "measure_definition_name": "set_r_value_of_insulation_for_roofs_to_a_specific_value",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "6a2b58a7-da4a-44f0-8a48-36bdc05043a5",
+          "measure_definition_version_uuid": "3b9a1933-b1d4-47b6-a5f0-6f2694604e1f",
+          "arguments": [
+            {
+              "display_name": "Skip Entire Measure",
+              "display_name_short": "Skip",
+              "name": "__SKIP__",
+              "value_type": "boolean",
+              "default_value": false,
+              "value": false
+            },
+            {
+              "display_name": "Increase in Material and Installation Costs for Construction per Area Used ($/ft^2).",
+              "display_name_short": "Increase in Material and Installation Costs for Construction per Area Used ($/ft^2).",
+              "name": "material_cost_increase_ip",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "One Time Retrofit Cost to Add Insulation to Construction ($/ft^2).",
+              "display_name_short": "One Time Retrofit Cost to Add Insulation to Construction ($/ft^2).",
+              "name": "one_time_retrofit_cost_ip",
+              "value_type": "double",
+              "default_value": 0.0,
+              "value": 0.0
+            },
+            {
+              "display_name": "Year to Incur One Time Retrofit Cost (whole years).",
+              "display_name_short": "Year to Incur One Time Retrofit Cost (whole years).",
+              "name": "years_until_retrofit_cost",
+              "value_type": "integer",
+              "default_value": 0,
+              "value": 0
+            }
+          ],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "Roof R-Value",
+                "display_name_short": "Roof R-Value",
+                "name": "r_value",
+                "value_type": "double",
+                "default_value": 10.0,
+                "value": 10.0
+              },
+              "display_name": "Roof R-Value",
+              "display_name_short": "Roof R-Value",
+              "variable_type": "variable",
+              "units": null,
+              "minimum": 10.0,
+              "maximum": 80.0,
+              "relation_to_output": null,
+              "static_value": 10.0,
+              "uuid": "0ff8949c-6c88-4633-8dbc-50085db38e36",
+              "version_uuid": "d75e39ae-3891-4405-a8e9-e7eff73badf6",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": 10,
+                        "weight": 0.05
+                      },
+                      {
+                        "value": 30,
+                        "weight": 0.1
+                      },
+                      {
+                        "value": 50,
+                        "weight": 0.45
+                      },
+                      {
+                        "value": 80,
+                        "weight": 0.4
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": 10.0
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": 80.0
+                  },
+                  {
+                    "name": "modes",
+                    "value": 50.0
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": 10.0
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 2
+        },
+        {
+          "name": "push_custom_results_to_mongo_db",
+          "display_name": "push_custom_results_to_mongo_db",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "PushCustomResultsToMongoDB",
+          "measure_definition_directory": "./measures/push_custom_results_to_mongo_db",
+          "measure_definition_directory_local": "/Users/chienharriman/OpenStudio-analysis-spreadsheet/measures/push_custom_results_to_mongo_db",
+          "measure_definition_display_name": "push_custom_results_to_mongo_db",
+          "measure_definition_name": "push_custom_results_to_mongo_db",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "88ea5d2e-b356-4dc6-a48d-7aefcb46b7e8",
+          "measure_definition_version_uuid": "8c13704e-7e14-4f9b-a90c-aaa6c5e4aad5",
+          "arguments": [
+            {
+              "display_name": "Skip Entire Measure",
+              "display_name_short": "Skip",
+              "name": "__SKIP__",
+              "value_type": "boolean",
+              "default_value": false,
+              "value": false
+            },
+            {
+              "display_name": "Geometry Profile",
+              "display_name_short": "Geometry Profile",
+              "name": "geometry_profile",
+              "value_type": "string",
+              "default_value": "{\"geometryProfile\": [{\"SPEEDSeedModel0.osm\": [{\"WindowWallRatio\": [0.5]}]}, {\"SPEEDSeedModel1.osm\": [{\"WindowWallRatio\": [0.3]}]}]}",
+              "value": "{\"geometryProfile\": [{\"SPEEDSeedModel0.osm\": [{\"WindowWallRatio\": [0.5]}]}, {\"SPEEDSeedModel1.osm\": [{\"WindowWallRatio\": [0.3]}]}]}"
+            },
+            {
+              "display_name": "Model Name",
+              "display_name_short": "Model Name",
+              "name": "os_model",
+              "value_type": "string",
+              "default_value": "SPEEDSeedModel0.osm",
+              "value": "SPEEDSeedModel0.osm"
+            },
+            {
+              "display_name": "User ID",
+              "display_name_short": "User ID",
+              "name": "user_id",
+              "value_type": "string",
+              "default_value": "bwelle",
+              "value": "bwelle"
+            },
+            {
+              "display_name": "Job ID",
+              "display_name_short": "Job ID",
+              "name": "job_id",
+              "value_type": "string",
+              "default_value": "52cb907b-f057-4dd8-8a6e-34dca296c498",
+              "value": "52cb907b-f057-4dd8-8a6e-34dca296c498"
+            },
+            {
+              "display_name": "ASHRAE Climate Zone",
+              "display_name_short": "ASHRAE Climate Zone",
+              "name": "ashrae_climate_zone",
+              "value_type": "string",
+              "default_value": "5A",
+              "value": "5A"
+            },
+            {
+              "display_name": "Building Type",
+              "display_name_short": "Building Type",
+              "name": "building_type",
+              "value_type": "string",
+              "default_value": "Office",
+              "value": "Office"
+            }
+          ],
+          "variables": [
+
+          ],
+          "workflow_index": 3
+        }
+      ]
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seed/SPEEDSeedModel0.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+    },
+    "file_format_version": 1
+  }
+}

@@ -1,0 +1,88 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>swap_lights_definition</name>
+  <uid>3bbebd1f-69fd-4d49-96fe-1284bce962f4</uid>
+  <version_id>18f30862-bab1-467a-aeff-6ac6bd61b02c</version_id>
+  <version_modified>20161107T222446Z</version_modified>
+  <xml_checksum>E8A47F56</xml_checksum>
+  <class_name>SwapLightsDefinition</class_name>
+  <display_name>SwapLightsDefinition</display_name>
+  <description>This measure will swap out one lights definition for another. All objects that had referred to the original definition will now refer to the new one.</description>
+  <modeler_description>This measure will not delete or change either definition, rather it just swaps out the references of one for the other. It is possible that the new definition is already used in the model elsewhere.
+    Each of these objects can be independently costed, however the measure can address demolition costs of the object being removed.
+  </modeler_description>
+  <arguments>
+    <argument>
+      <name>old_lights_def</name>
+      <display_name>Choose the Lights Definition you Want to Replace.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>new_lights_def</name>
+      <display_name>Choose the Lights Definition to Use in Place of Removed Definition.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>demo_cost_initial_const</name>
+      <display_name>Demolition Costs Occur During Initial Definition?</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>false</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Electric Lighting.Lighting Equipment</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Function</name>
+      <value>Measure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Requires EnergyPlus Results</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.0.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>773836DD</checksum>
+    </file>
+  </files>
+</measure>

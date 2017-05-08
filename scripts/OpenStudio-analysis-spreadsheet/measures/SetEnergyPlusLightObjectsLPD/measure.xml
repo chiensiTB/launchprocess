@@ -1,0 +1,52 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_energy_plus_light_objects_lpd</name>
+  <uid>27b7b89c-6d88-44c9-a84a-0038e768bd42</uid>
+  <version_id>856ec338-3438-48a7-89fe-74e8e2ebb2d6</version_id>
+  <version_modified>20161107T222432Z</version_modified>
+  <xml_checksum>C75AF51E</xml_checksum>
+  <class_name>SetEnergyPlusLightObjectsLPD</class_name>
+  <display_name>SetEnergyPlusLightObjectsLPD</display_name>
+  <description>Set the LPD for all lights objects in the model. Input values are in SI units.</description>
+  <modeler_description>Affected lights objects will have "Design Level Calculation Method" set to "Watts/Area" and the "Watts per Zone Floor Area" set to the requested SI value.</modeler_description>
+  <arguments>
+    <argument>
+      <name>lpd</name>
+      <display_name>Lighting Power Density (W/m^2)</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>10.76</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Electric Lighting.Lighting Equipment</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.1.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>9583100A</checksum>
+    </file>
+  </files>
+</measure>

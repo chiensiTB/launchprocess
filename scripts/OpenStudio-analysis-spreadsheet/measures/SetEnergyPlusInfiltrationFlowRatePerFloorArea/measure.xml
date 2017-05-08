@@ -1,0 +1,51 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_energy_plus_infiltration_flow_rate_per_floor_area</name>
+  <uid>854932e4-c005-4922-a047-ddc641f5fd2c</uid>
+  <version_id>a274296a-476e-4313-a54e-0a60003c4fbd</version_id>
+  <version_modified>20161107T222431Z</version_modified>
+  <xml_checksum>C75AF51E</xml_checksum>
+  <class_name>SetEnergyPlusInfiltrationFlowRatePerFloorArea</class_name>
+  <display_name>SetEnergyPlusInfiltrationFlowRatePerFloorArea</display_name>
+  <description>Set the flow rate per floor area value for all infiltration objects in the model. Input values are in SI units.</description>
+  <modeler_description>Affected infiltration objects will have "Design Flor Rate Calculation Method" set to "Flow/Area" and the "Flow per Zone Floor Area" set to the requested SI value.</modeler_description>
+  <arguments>
+    <argument>
+      <name>flowPerZoneFloorArea</name>
+      <display_name>Flow per Zone Floor Area (m^3/s-m^2).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Infiltration</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.1.0</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>4BCA3C57</checksum>
+    </file>
+  </files>
+</measure>
