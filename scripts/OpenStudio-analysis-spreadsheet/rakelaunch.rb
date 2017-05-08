@@ -41,17 +41,19 @@ p rake.tasks()
 
 target = "http://35.166.248.79:8080"
 project = "/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects/lhs_discrete_continuous_example.xlsx"
-analysis, run_options = get_project(project)
-puts "returned get_project args: ", analysis
-puts "returned get_project args: ", run_options
 
-run_options[:batch_run_method] = 'batch_run' #args[:batch_run_method]
-save_analysis(analysis)
-# if args[:target].downcase == 'aws'
-#   create_cluster(run_options)
-# end
-run_analysis(analysis, run_options, target, false)
-p "Rakefile is executed."
+rake[:run_custom].invoke(target,project)
+# analysis, run_options = get_project(project)
+# puts "returned get_project args: ", analysis
+# puts "returned get_project args: ", run_options
+
+# run_options[:batch_run_method] = 'batch_run' #args[:batch_run_method]
+# save_analysis(analysis)
+# # if args[:target].downcase == 'aws'
+# #   create_cluster(run_options)
+# # end
+# run_analysis(analysis, run_options, target, false)
+# p "Rakefile is executed."
 
 
 # Command-line arguments in Rake: http://viget.com/extend/protip-passing-parameters-to-your-rake-tasks

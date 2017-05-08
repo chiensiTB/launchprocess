@@ -4,7 +4,8 @@
   "description": "a way to handle requests to speed",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start":"node app.js"
   },
   "author": "CHarriman",
   "license": "ISC",

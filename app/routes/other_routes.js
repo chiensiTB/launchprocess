@@ -17,7 +17,7 @@ module.exports = function(app, s3, upload) {
   var pathToUnzipLocation = '/tmp/pw-uploads/'; //unused, there as a placeholder if needed.
   var pathToDownloadLocation = '/tmp/pw-uploads/';
   var ipaddressOfServer = '';
-  var pathToRakeFile = '/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/Rakefile';
+  var pathToRakeFile = '/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet';
   var projectspath = "/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects";
   var seedpath = "/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/seeds";
   //incoming
@@ -91,19 +91,26 @@ module.exports = function(app, s3, upload) {
       //old test
       //if path.exists, great, if it doesn't ... throw an error
       //now run a child process to get external files to do their stuff
-      var rubychild = cp.spawn('ruby',['scripts/OpenStudio-analysis-spreadsheet/rakelaunch.rb']);
-      rubychild.stdout.on('data', (data) => {
-        console.log(data.toString());
-      });
+      //let's try the bash shell
+      console.log("Trying the bash shell to run rake")
+      var exec = cp.exec('bundle exec rake run_custom[http://35.166.248.79:8080,/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects/lhs_discrete_continuous_example.xlsx]',
+        [{cwd:pathToRakeFile}], function(error, stdout,stderr){
+          console.log("Ran rake file", stdout);
+        });
+      //run via a ruby script
+      // var rubychild = cp.spawn('ruby',['scripts/OpenStudio-analysis-spreadsheet/rakelaunch.rb']);
+      // rubychild.stdout.on('data', (data) => {
+      //   console.log(data.toString());
+      // });
 
-      rubychild.stderr.on('data', (data) => {
-        console.log(data.toString());
-        //TODO: what do we want to do in the case of an error?
-      });
+      // rubychild.stderr.on('data', (data) => {
+      //   console.log(data.toString());
+      //   //TODO: what do we want to do in the case of an error?
+      // });
 
-      rubychild.on('exit', (code) => {
-        console.log(`Child exited with code ${code}`);
-      });
+      // rubychild.on('exit', (code) => {
+      //   console.log(`Child exited with code ${code}`);
+      // });
 
       resolve(xlfinal);
 
