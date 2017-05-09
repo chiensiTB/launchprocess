@@ -92,11 +92,14 @@ module.exports = function(app, s3, upload) {
       //if path.exists, great, if it doesn't ... throw an error
       //now run a child process to get external files to do their stuff
       //let's try the bash shell
-      console.log("Trying the bash shell to run rake")
-      var exec = cp.exec('bundle exec rake run_custom[http://35.166.248.79:8080,/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects/lhs_discrete_continuous_example.xlsx]',
-        [{cwd:pathToRakeFile}], function(error, stdout,stderr){
-          console.log("Ran rake file", stdout);
-        });
+
+      console.log("Trying the bash shell to run rake");
+      console.log("Excel file name: ", xlfinal);
+      // var exec = cp.exec('cd ./scripts/OpenStudio-analysis-spreadsheet ; bundle exec rake run_custom[http://35.166.248.79:8080,/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects/lhs_discrete_continuous_example.xlsx]',
+      //   [{cwd:pathToRakeFile}], function(error, stdout,stderr){
+      //     console.log("Ran rake file", stdout);
+      //     resolve(xlfinal);
+      // });
       //run via a ruby script
       // var rubychild = cp.spawn('ruby',['scripts/OpenStudio-analysis-spreadsheet/rakelaunch.rb']);
       // rubychild.stdout.on('data', (data) => {
@@ -111,12 +114,48 @@ module.exports = function(app, s3, upload) {
       // rubychild.on('exit', (code) => {
       //   console.log(`Child exited with code ${code}`);
       // });
-
-      resolve(xlfinal);
-
     });
     
   }
+
+  function moveFile( fileObj,filepath ) {
+    return new Promise(function(resolve, reject) {
+      var fileNameFinal = "";
+      console.log(fileObj);
+      if(path.extname(fileObj) == ".osm")
+      {
+        let osmpath = filepath+'/'+fileObj;
+        fileNameFinal = seedpath+'/'+fileObj;
+        mv(osmpath,fileNameFinal, function(err) {
+          if(err)
+          {
+            console.log("Something went wrong when trying to move the .osm file") //TODO: improve the response so it is sent to user, not fail
+          }
+          else
+          {
+            console.log(".osm file moved to " + fileNameFinal);
+          }
+          resolve(fileNameFinal); 
+        });
+      }
+      else if (path.extname(fileObj) == ".xlsx")
+      {
+        let xlpath = filepath+'/'+fileObj;
+        fileNameFinal = projectspath+'/'+fileObj;
+        mv(xlpath,fileNameFinal, function(err) {
+          if(err)
+          {
+            console.log("Something went wrong when trying to move the .xlsx file") //TODO: improve the response so it is sent ot user, not fail
+          }
+          else
+          {
+            console.log(".xlsx file moved to " + fileNameFinal);
+          }
+            resolve(fileNameFinal); 
+        });
+      }
+  });
+}
 
   function storeFileLocally(inkey, zipfilename) {
 
@@ -151,7 +190,7 @@ module.exports = function(app, s3, upload) {
           console.log("Create readstream error:", err);
           throw err;
         }).pipe(file);
-        filestream.on('finish', () =>{
+        filestream.on('finish', () => {
           console.log("Saved unzipped files locally to drive.")
           //we resolve to this so the ruby script can find the excel spreadsheet and seed model path it needs for its execution
           var osmfinal = "";
@@ -163,42 +202,19 @@ module.exports = function(app, s3, upload) {
             console.log("Valid path.");
             //1 - move the excel file and possibly the seed model to the proper location
             let files = fs.readdirSync(filepath);
-            for(var f in files)
-            {
-              if(path.extname(files[f]) == ".osm")
+            //TODO: error checking
+            let file1prom = moveFile(files[0],filepath);
+            let file2prom = moveFile(files[1],filepath);
+            Promise.all([file1prom, file2prom]).then(values => { 
+              for(let i of values)
               {
-                let osmpath = filepath+'/'+files[f];
-                osmfinal = seedpath+'/'+files[f];
-                mv(osmpath,osmfinal, function(err) {
-                  if(err)
-                  {
-                    console.log("Something went wrong when trying to move the .osm file") //TODO: improve the response so it is sent to user, not fail
-                  }
-                  else
-                  {
-                    console.log(".osm file moved to " + osmfinal);
-                  }
-                });
+                console.log(i);
+                console.log(values[i]);
               }
-              else if (path.extname(files[f]) == ".xlsx")
-              {
-                let xlpath = filepath+'/'+files[f];
-                xlfinal = projectspath+'/'+files[f];
-                mv(xlpath,xlfinal, function(err) {
-                  if(err)
-                  {
-                    console.log("Something went wrong when trying to move the .xlsx file") //TODO: improve the response so it is sent ot user, not fail
-                  }
-                  else
-                  {
-                    console.log(".xlsx file moved to " + xlfinal);
-                  }
-                });
-              }
-            }
-          }
-          resolve(xlfinal); 
-        })
+              resolve(values[0]);
+            });
+          } 
+        });
       }
       catch (e) {
         reject(e);
