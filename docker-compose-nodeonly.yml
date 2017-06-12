@@ -1,0 +1,8 @@
+version: '3'
+
+services: 
+    nodeserver_one:
+        build: ./current
+        ports:
+            - "8080:8080"
+    

@@ -17,9 +17,9 @@ module.exports = function(app, s3, upload) {
   var pathToUnzipLocation = '/tmp/pw-uploads/'; //unused, there as a placeholder if needed.
   var pathToDownloadLocation = '/tmp/pw-uploads/';
   var ipaddressOfServer = '';
-  var pathToRakeFile = '/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet';
-  var projectspath = "/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects";
-  var seedpath = "/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/seeds";
+  var pathToRakeFile = '/var/www/app/current/scripts/OpenStudio-analysis-spreadsheet';
+  var projectspath = "/var/www/app/current/scripts/OpenStudio-analysis-spreadsheet/projects";
+  var seedpath = "/var/www/app/current/scripts/OpenStudio-analysis-spreadsheet/seeds";
   //incoming
   var key;
   var filename;
@@ -40,6 +40,7 @@ module.exports = function(app, s3, upload) {
     {
       //validate is multi-part form?
       //check on size of incoming?
+      console.log(req);
       if(req.file)
       {
         var key = req.file.key;
@@ -58,7 +59,7 @@ module.exports = function(app, s3, upload) {
       }
       else
       {
-        res.status(400).
+        res.status(400);
         res.send("Error: this request contains multiple zip files.  You should only be sending one zip file at a time.");
       }
     }
@@ -95,11 +96,15 @@ module.exports = function(app, s3, upload) {
 
       console.log("Trying the bash shell to run rake");
       console.log("Excel file name: ", xlfinal);
-      // var exec = cp.exec('cd ./scripts/OpenStudio-analysis-spreadsheet ; bundle exec rake run_custom[http://35.166.248.79:8080,/Users/chienharriman/PWSpeedTestDocker/speedrequestserver/pwspeedrequest/scripts/OpenStudio-analysis-spreadsheet/projects/lhs_discrete_continuous_example.xlsx]',
-      //   [{cwd:pathToRakeFile}], function(error, stdout,stderr){
-      //     console.log("Ran rake file", stdout);
-      //     resolve(xlfinal);
-      // });
+      let command = 'cd ./scripts/OpenStudio-analysis-spreadsheet ; bundle exec rake run_custom[http://35.160.92.150:8080,'+xlfinal+']'
+      console.log('trying shell command:', command)
+      var exec = cp.exec(command,
+        [{cwd:pathToRakeFile}], function(error, stdout,stderr){
+          console.log("Ran rake file", stdout);
+          console.log("StdErrors", stderr)
+          console.log("Errors", error)
+          resolve(xlfinal);
+      });
       //run via a ruby script
       // var rubychild = cp.spawn('ruby',['scripts/OpenStudio-analysis-spreadsheet/rakelaunch.rb']);
       // rubychild.stdout.on('data', (data) => {
