@@ -40,14 +40,20 @@ module.exports = function(app, s3, upload) {
     {
       //validate is multi-part form?
       //check on size of incoming?
-      console.log(req);
+      //console.log(req);
       if(req.file)
       {
         var key = req.file.key;
+        console.log("file key: ", key);
         //console.log("request file: ", req.file);
         //console.log("request body: ", req.body);
+        var username = req.param('username');
+        var userid = req.param('userid');
+        var projectid = req.param('projectid');
+        console.log('username ', username)
+        console.log('userid ', userid);
+        console.log('projectid ', projectid);
         var filename = req.file.originalname.substring(0,req.file.originalname.length - 4);
-        console.log("key ", key);
         console.log("filename ", filename);
 
         let iterator = manageProcesses(key,filename);
@@ -96,7 +102,7 @@ module.exports = function(app, s3, upload) {
 
       console.log("Trying the bash shell to run rake");
       console.log("Excel file name: ", xlfinal);
-      let command = 'cd ./scripts/OpenStudio-analysis-spreadsheet ; bundle exec rake run_custom[http://35.160.92.150:8080,'+xlfinal+']'
+      let command = 'cd ./scripts/OpenStudio-analysis-spreadsheet ; bundle exec rake run_custom[http://52.25.239.181:8080,'+xlfinal+']'
       console.log('trying shell command:', command)
       var exec = cp.exec(command,
         [{cwd:pathToRakeFile}], function(error, stdout,stderr){
@@ -145,6 +151,8 @@ module.exports = function(app, s3, upload) {
       }
       else if (path.extname(fileObj) == ".xlsx")
       {
+        //add code to look for a certain string that indicates it is the seed?  That is one option.  
+        //In this application, the user properly defines the path in their spreadsheet, and that is all
         let xlpath = filepath+'/'+fileObj;
         fileNameFinal = projectspath+'/'+fileObj;
         mv(xlpath,fileNameFinal, function(err) {
@@ -208,15 +216,31 @@ module.exports = function(app, s3, upload) {
             //1 - move the excel file and possibly the seed model to the proper location
             let files = fs.readdirSync(filepath);
             //TODO: error checking
-            let file1prom = moveFile(files[0],filepath);
-            let file2prom = moveFile(files[1],filepath);
-            Promise.all([file1prom, file2prom]).then(values => { 
+            //Jun 21, 2017.  Add the ability to handle multiple files, more than two
+            let promarray = []
+            for(let i = 0; i < files.length; i++)
+            {
+              promarray.push(moveFile(files[i],filepath));
+            }
+            //let file1prom = moveFile(files[0],filepath);
+            //let file2prom = moveFile(files[1],filepath);
+            let excelfile = 0;
+            console.log(promarray);
+            console.log("Excelfile is: ", excelfile);
+            Promise.all(promarray).then(values => { 
               for(let i of values)
               {
-                console.log(i);
-                console.log(values[i]);
+                console.log("here 1", i);
+                console.log("string length", i.length)
+                let cleankey = i.substring(i.length - 4, i.length);
+                console.log("substring", cleankey)
+                if(cleankey=="xlsx")
+                {
+                  excelfile = i;
+                }
               }
-              resolve(values[0]);
+
+              resolve(excelfile);
             });
           } 
         });

@@ -354,8 +354,8 @@
           "measure_definition_display_name": "Reduce Lighting Loads by Percentage",
           "measure_definition_name": "reduce_lighting_loads_by_percentage",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "739d3747-05a1-4301-a440-a892ffa33de9",
-          "measure_definition_version_uuid": "be427f58-c999-413a-902b-8d60b6811cf6",
+          "measure_definition_uuid": "105500fc-98aa-418e-a1e9-e75312484610",
+          "measure_definition_version_uuid": "dfdecdc3-41db-4646-a81c-10fbce6040bb",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -448,8 +448,8 @@
               "maximum": 70.0,
               "relation_to_output": null,
               "static_value": 0.0,
-              "uuid": "a98fcd53-26ce-4845-852b-4dadc821e7a8",
-              "version_uuid": "1133df4b-23e4-41be-af61-e93dbd709d11",
+              "uuid": "80c90d93-23be-4a06-93c1-e979c2a9c48e",
+              "version_uuid": "3e4df9dc-ad3d-46d2-aa8b-7ceea94c35fa",
               "variable": true,
               "uncertainty_description": {
                 "type": "triangle",
@@ -491,8 +491,8 @@
           "measure_definition_display_name": "Rotate Building Relative to Current Orientation",
           "measure_definition_name": "rotate_building_relative_to_current_orientation",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "2531821b-a716-42d3-a7f1-4ea275973741",
-          "measure_definition_version_uuid": "b22e8a22-6ae6-491f-91b8-07e102886f57",
+          "measure_definition_uuid": "a58b31ae-a02e-43b6-a539-17d7bbc01167",
+          "measure_definition_version_uuid": "f9403caf-4028-41d8-9c9f-3ab31423ef96",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -521,8 +521,8 @@
               "maximum": 359.0,
               "relation_to_output": null,
               "static_value": 0.0,
-              "uuid": "81dae335-0542-40e2-9929-7e1dece6b981",
-              "version_uuid": "33039691-3cad-49e7-b7ad-39fa3e199fd2",
+              "uuid": "fe269251-10f3-498a-a9c6-1acc84b9e1cd",
+              "version_uuid": "5de1f76d-c447-4368-a2f4-b04d26614fd1",
               "variable": true,
               "uncertainty_description": {
                 "type": "uniform",
@@ -564,8 +564,8 @@
           "measure_definition_display_name": "Set R-value of Insulation for Exterior Walls to a Specific Value",
           "measure_definition_name": "set_r_value_of_insulation_for_exterior_walls_to_a_specific_value",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "92af6700-0d70-4387-a193-4736ab1165b0",
-          "measure_definition_version_uuid": "c04a9743-621a-455a-bcfb-fb542c64b71f",
+          "measure_definition_uuid": "01b5678c-aacf-4bea-9c76-2df077a25d42",
+          "measure_definition_version_uuid": "26d4cd9f-0804-47b3-bf05-8b86c24836ba",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -618,8 +618,8 @@
               "maximum": 50.0,
               "relation_to_output": null,
               "static_value": 13.0,
-              "uuid": "47bab312-f2d4-4f87-b8a7-70dc82c3b264",
-              "version_uuid": "eb4a296d-f2af-40fe-9d51-7eec4f606e8c",
+              "uuid": "38c30850-7a55-4d16-8614-0db554d23ad4",
+              "version_uuid": "f90983d5-9f11-4619-bf81-609bade9279c",
               "variable": true,
               "uncertainty_description": {
                 "type": "normal",
@@ -661,8 +661,8 @@
           "measure_definition_display_name": "Set R-value of Insulation for Roofs to a Specific Value",
           "measure_definition_name": "set_r_value_of_insulation_for_roofs_to_a_specific_value",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "5334ac93-03df-4832-8540-a2b26679cf50",
-          "measure_definition_version_uuid": "b4d341f4-3a41-4870-b652-17cf8c773b5b",
+          "measure_definition_uuid": "6557cbe0-c2db-4461-aca4-53dad091d109",
+          "measure_definition_version_uuid": "7f965d55-6a0d-402e-8359-6d9b26a6b050",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -715,8 +715,8 @@
               "maximum": 80.0,
               "relation_to_output": null,
               "static_value": 10.0,
-              "uuid": "373d04f1-4ac9-4815-99b2-163a8d6227cf",
-              "version_uuid": "e53fba24-6950-410a-aa6d-ee58b690be7f",
+              "uuid": "ccc47930-dca1-4ee0-aaea-a41dadb366a4",
+              "version_uuid": "8375e425-1bb0-40d8-b723-e83b2495db4f",
               "variable": true,
               "uncertainty_description": {
                 "type": "discrete",
@@ -779,8 +779,8 @@
           "measure_definition_display_name": "Set Window to Wall Ratio by Façade West",
           "measure_definition_name": "set_window_to_wall_ratio_by_façade_west",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "00d01e35-5616-4c30-9e05-392f49b04bd6",
-          "measure_definition_version_uuid": "1120341f-c337-456a-88ff-df013c4b0116",
+          "measure_definition_uuid": "7fb203a8-2be6-4b7b-9d56-1a95782aafd2",
+          "measure_definition_version_uuid": "99d381c3-a8da-46df-9269-88a2b4b81ede",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -825,8 +825,8 @@
               "maximum": 0.95,
               "relation_to_output": null,
               "static_value": 0.4,
-              "uuid": "07119635-b8ce-4ffa-a294-e7c25289115c",
-              "version_uuid": "13ad3cea-ca54-47cc-9d09-490d04346292",
+              "uuid": "f0bf9636-da35-4d90-b878-6a3049afa396",
+              "version_uuid": "70221abf-3797-45b6-a2c9-6cc43081d7fc",
               "variable": true,
               "uncertainty_description": {
                 "type": "triangle",
@@ -868,8 +868,8 @@
           "measure_definition_display_name": "Set Window to Wall Ratio by Façade East",
           "measure_definition_name": "set_window_to_wall_ratio_by_façade_east",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "dd7a79ea-80d8-490c-be5d-d032cc4f67f8",
-          "measure_definition_version_uuid": "b9d60aa5-e7fd-469a-9cd7-f9b831eb8179",
+          "measure_definition_uuid": "d9ef33be-3f9e-43fe-b2ba-bcbf25ed5e3d",
+          "measure_definition_version_uuid": "04654720-4122-4d03-9e27-8fc9ae67b4d0",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
@@ -914,8 +914,8 @@
               "maximum": 0.95,
               "relation_to_output": null,
               "static_value": 0.4,
-              "uuid": "30316956-6ec6-4898-bd01-d4da939c4653",
-              "version_uuid": "db94cbf5-0556-4336-b573-2f26fa775cf9",
+              "uuid": "8c8bdc6a-c73b-4c6c-87bc-f90a478a8dec",
+              "version_uuid": "29b98497-58c3-411a-bf48-602290fbd061",
               "variable": true,
               "uncertainty_description": {
                 "type": "triangle",
@@ -957,8 +957,8 @@
           "measure_definition_display_name": "Xcel EDA Tariff Selection and Model Setup",
           "measure_definition_name": "xcel_eda_tariff_selection_and_model_setup",
           "measure_definition_name_xml": null,
-          "measure_definition_uuid": "00b415d4-5f05-47dd-8934-1b52fa818a16",
-          "measure_definition_version_uuid": "09184aad-25a8-453e-8d96-64a04c89ea58",
+          "measure_definition_uuid": "854a429f-99e2-4169-a534-5b3dd6cc353f",
+          "measure_definition_version_uuid": "54cd932e-fcef-4b31-b806-d370c1bb3886",
           "arguments": [
             {
               "display_name": "Skip Entire Measure",
